@@ -17,4 +17,15 @@ describe('StringCalculator', () => {
     test('single number returns the number', () => {
         expect(calculator.add("1")).toBe(1);
     });
+
+    // Test case for two numbers separated by a comma.
+    test('two numbers separated by comma returns their sum', () => {
+        expect(calculator.add("1,5")).toBe(6);
+    });
+
+    // Test case for multiple numbers separated by commas.
+    test('multiple numbers separated by comma returns their sum', () => {
+        expect(calculator.add("1,2,3,4")).toBe(10);
+    });
+
 });
