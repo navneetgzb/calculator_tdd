@@ -28,4 +28,19 @@ describe('StringCalculator', () => {
         expect(calculator.add("1,2,3,4")).toBe(10);
     });
 
+    // Test case for numbers separated by a newline and comma.
+    test('numbers separated by new lines and commas return their sum', () => {
+        expect(calculator.add("1\n2,3")).toBe(6);
+    });
+
+    // Test case for custom delimiter support.
+    test('supports custom delimiters', () => {
+        expect(calculator.add("//;\n1;2")).toBe(3);
+    });
+
+    // Test case for handling negative numbers and throwing exceptions.
+    test('negative numbers throw an exception', () => {
+        expect(() => calculator.add("1,-2,3,-5")).toThrow("Negative numbers not allowed: -2, -5");
+    });
+
 });
