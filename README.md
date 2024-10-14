@@ -19,6 +19,7 @@ Run:
 
 output:
      StringCalculator
+     
         √ empty string returns 0 (2 ms)
         √ single number returns the number
         √ two numbers separated by comma returns their sum
