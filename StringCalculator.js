@@ -12,6 +12,15 @@ class StringCalculator {
         // Extract the custom delimiter (if any) and the actual number part.
         let { delimiter, numberPart } = this.getDelimiterAndNumbers(numbers);
 
+        // Split the numbers by delimiter, newline (\n), or comma (,).
+        let numList = numberPart.split(new RegExp(`[${delimiter}\n,]`));
+
+         // Convert the numbers to integers, ignore empty strings, and sum them.
+        return numList
+            .filter(num => num !== "")
+            .map(num => parseInt(num))
+            .reduce((sum, num) => sum + num, 0);
+
     }
 
     /**
