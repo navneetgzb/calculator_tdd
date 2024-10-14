@@ -12,4 +12,9 @@ describe('StringCalculator', () => {
     test('empty string returns 0', () => {
         expect(calculator.add("")).toBe(0);
     });
+
+    // Test case for a single number in the input string.
+    test('single number returns the number', () => {
+        expect(calculator.add("1")).toBe(1);
+    });
 });

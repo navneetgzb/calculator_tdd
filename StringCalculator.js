@@ -15,7 +15,13 @@ class StringCalculator {
         // Split the numbers by delimiter, newline (\n), or comma (,).
         let numList = numberPart.split(new RegExp(`[${delimiter}\n,]`));
 
-         // Convert the numbers to integers, ignore empty strings, and sum them.
+        // Filter out negative numbers and throw an exception if found.
+        let negatives = numList.filter(num => num !== "" && parseInt(num) < 0);
+        if (negatives.length > 0) {
+            throw new Error(`Negative numbers not allowed: ${negatives.join(", ")}`);
+        }
+
+        // Convert the numbers to integers, ignore empty strings, and sum them.
         return numList
             .filter(num => num !== "")
             .map(num => parseInt(num))
